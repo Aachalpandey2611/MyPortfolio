@@ -44,10 +44,13 @@ export function renderProjects(root, projects) {
     const title = el("h3", "card-title", p.name);
     const meta = el("p", "meta", p.meta);
 
+    const shot = el("div", "project-shot");
+    shot.appendChild(el("div", "project-shot-label", "Project Screenshot Here"));
+
     const kv = el("div", "kv");
 
     const row1 = el("div", "kv-row");
-    row1.appendChild(el("div", "kv-label", "Problem statement"));
+    row1.appendChild(el("div", "kv-label", "What this project does"));
     row1.appendChild(el("div", "kv-value", p.problem));
 
     const row2 = el("div", "kv-row");
@@ -82,6 +85,7 @@ export function renderProjects(root, projects) {
 
     card.appendChild(title);
     card.appendChild(meta);
+    card.appendChild(shot);
     card.appendChild(kv);
     if (actions.childElementCount) card.appendChild(actions);
     root.appendChild(card);

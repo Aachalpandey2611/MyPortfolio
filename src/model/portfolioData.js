@@ -122,4 +122,10 @@ export const portfolioData = {
     "Completed virtual internships.",
     "Strong interest in continuous learning.",
   ],
+
+  currentlyLearning: [
+    "Improving my development skills through real projects.",
+    "Exploring AI/ML concepts and practical applications.",
+    "Learning modern tools and workflows used in teams.",
+  ],
 };

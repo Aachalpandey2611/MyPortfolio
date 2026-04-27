@@ -59,10 +59,13 @@ export function initSubtleParallax() {
 export function initTilt() {
   if (prefersReducedMotion()) return;
 
+  const canHover = window.matchMedia?.("(hover: hover) and (pointer: fine)")?.matches ?? false;
+  if (!canHover) return;
+
   const targets = Array.from(document.querySelectorAll(".card, .hero-card"));
   if (!targets.length) return;
 
-  const maxDeg = 5.5;
+  const maxDeg = 3;
 
   for (const node of targets) {
     // Initialize sheen position so first hover looks intentional.

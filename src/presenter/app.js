@@ -7,6 +7,7 @@ export function createAppPresenter({ model, view }) {
     const projectsRoot = document.getElementById("projectsGrid");
     const expRoot = document.getElementById("experienceList");
     const highlightsRoot = document.getElementById("highlightsList");
+    const learningRoot = document.getElementById("learningList");
 
     if (!skillsRoot || !projectsRoot || !expRoot || !highlightsRoot) {
       // Fail quietly to avoid breaking the page if markup changes.
@@ -17,6 +18,10 @@ export function createAppPresenter({ model, view }) {
     view.renderProjects(projectsRoot, model.projects);
     view.renderExperience(expRoot, model.experience);
     view.renderHighlights(highlightsRoot, model.highlights);
+
+    if (learningRoot && Array.isArray(model.currentlyLearning)) {
+      view.renderHighlights(learningRoot, model.currentlyLearning);
+    }
 
     // Footer year
     const yearEl = document.getElementById("year");
